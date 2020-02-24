@@ -147,10 +147,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CoreClrDefinitions.cpp" />
     <ClCompile Include="CppPg.cpp" />
+    <ClCompile Include="RuntimeUtils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CoreClrDefinitions.h" />
     <ClInclude Include="coreclrhost.h" />
+    <ClInclude Include="RuntimeUtils.h" />
+    <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
