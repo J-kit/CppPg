@@ -7,9 +7,9 @@
 class CoreClrDefinitions
 {
 public:
-	coreclr_initialize_ptr initializeCoreClr;
-	coreclr_create_delegate_ptr createManagedDelegate;
-	coreclr_shutdown_ptr shutdownCoreClr;
+	static coreclr_initialize_ptr initializeCoreClr;
+	static coreclr_create_delegate_ptr createManagedDelegate;
+	static coreclr_shutdown_ptr shutdownCoreClr;
 
 	CoreClrDefinitions();
 	int Init(RuntimeEnvironment env);

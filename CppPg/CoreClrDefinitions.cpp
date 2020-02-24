@@ -13,7 +13,7 @@ int CoreClrDefinitions::Init(RuntimeEnvironment env) {
 	if (initiated) {
 		return 1;
 	}
-	initiated = true;
+
 
 #if WINDOWS
 // <Snippet1>
@@ -37,14 +37,14 @@ int CoreClrDefinitions::Init(RuntimeEnvironment env) {
 	//
 #if WINDOWS
 	// <Snippet2>
-	coreclr_initialize_ptr initializeCoreClr = (coreclr_initialize_ptr)GetProcAddress(coreClr, "coreclr_initialize");
-	coreclr_create_delegate_ptr createManagedDelegate = (coreclr_create_delegate_ptr)GetProcAddress(coreClr, "coreclr_create_delegate");
-	coreclr_shutdown_ptr shutdownCoreClr = (coreclr_shutdown_ptr)GetProcAddress(coreClr, "coreclr_shutdown");
+	initializeCoreClr = (coreclr_initialize_ptr)GetProcAddress(coreClr, "coreclr_initialize");
+	createManagedDelegate = (coreclr_create_delegate_ptr)GetProcAddress(coreClr, "coreclr_create_delegate");
+	shutdownCoreClr = (coreclr_shutdown_ptr)GetProcAddress(coreClr, "coreclr_shutdown");
 	// </Snippet2>
 #elif LINUX
-	coreclr_initialize_ptr initializeCoreClr = (coreclr_initialize_ptr)dlsym(coreClr, "coreclr_initialize");
-	coreclr_create_delegate_ptr createManagedDelegate = (coreclr_create_delegate_ptr)dlsym(coreClr, "coreclr_create_delegate");
-	coreclr_shutdown_ptr shutdownCoreClr = (coreclr_shutdown_ptr)dlsym(coreClr, "coreclr_shutdown");
+	initializeCoreClr = (coreclr_initialize_ptr)dlsym(coreClr, "coreclr_initialize");
+	createManagedDelegate = (coreclr_create_delegate_ptr)dlsym(coreClr, "coreclr_create_delegate");
+	shutdownCoreClr = (coreclr_shutdown_ptr)dlsym(coreClr, "coreclr_shutdown");
 #endif
 
 	if (initializeCoreClr == NULL)
@@ -64,6 +64,7 @@ int CoreClrDefinitions::Init(RuntimeEnvironment env) {
 		printf("coreclr_shutdown not found");
 		return -1;
 	}
+	initiated = true;
 	return 1;
 }
 

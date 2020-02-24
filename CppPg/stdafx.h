@@ -5,9 +5,6 @@
 #include <string.h>
 #include <string>
 #include <iostream>
-
-//#include <minwindef.h>
-
 #include "coreclrhost.h"
 
 #define WINDOWS 1
