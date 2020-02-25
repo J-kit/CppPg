@@ -155,6 +155,7 @@
   <ItemGroup>
     <ClInclude Include="CoreClrDefinitions.h" />
     <ClInclude Include="coreclrhost.h" />
+    <ClInclude Include="ManagedDelegateResult.h" />
     <ClInclude Include="RuntimeUtils.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>

@@ -1,7 +1,7 @@
 #pragma once
 #include "stdafx.h"
 #include "RuntimeUtils.h"
-
+#include "ManagedDelegateResult.h"
 
 
 class CoreClrDefinitions

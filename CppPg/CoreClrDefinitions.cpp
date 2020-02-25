@@ -1,5 +1,6 @@
-#include "CoreClrDefinitions.h"
 #include "stdafx.h"
+#include "CoreClrDefinitions.h"
+#include "ManagedDelegateResult.h"
 
 CoreClrDefinitions::CoreClrDefinitions()
 {

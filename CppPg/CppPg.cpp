@@ -2,7 +2,7 @@
 #include "RuntimeUtils.h"
 #include "CoreClrDefinitions.h"
 
-
+#include "ManagedDelegateResult.h"
 
 // Function pointer types for the managed call and callback
 
@@ -44,7 +44,9 @@ int dostuff(char** argv) {
 int main(int argc, char* argv[])
 {
 	//dostuff(argv);
-
+	//CppPg.obj : error LNK2019: unresolved external symbol 
+	//"public: struct ManagedDelegateResult<char * (__cdecl*)(char const *,int,int,double *,int (__cdecl*)(int))> __cdecl CoreClrDefinitions::CreateManagedDelegate<char * (__cdecl*)(char const *,int,int,double *,int (__cdecl*)(int))>(void)" (??$CreateManagedDelegate@P6APEADPEBDHHPEANP6AHH@Z@Z@CoreClrDefinitions@@QEAA?AU?$ManagedDelegateResult@P6APEADPEBDHHPEANP6AHH@Z@Z@@XZ) referenced in function main
+	//C:\Users\Weirdo\source\repos\CppPg\x64\Debug\CppPg.exe : fatal error LNK1120 : 1 unresolved externals
 	auto env = RuntimeUtils::GetEnvironment(argv);
 	auto def = new CoreClrDefinitions();
 	if (def->Init(env) == -1) {
