@@ -2,3 +2,4 @@
 
 template <typename T>
 struct ManagedDelegateResult<T> managedDelegateResult;
+

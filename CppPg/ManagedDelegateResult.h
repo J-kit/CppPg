@@ -1,5 +1,4 @@
 #pragma once
-#include "stdafx.h"
 
 template <typename T>
 struct ManagedDelegateResult {
@@ -8,3 +7,4 @@ struct ManagedDelegateResult {
 
 	T Delegate;
 };
+
