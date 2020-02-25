@@ -24,6 +24,9 @@
     <ClCompile Include="CoreClrDefinitions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ManagedDelegateResult.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="coreclrhost.h">

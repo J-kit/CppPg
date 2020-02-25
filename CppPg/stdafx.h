@@ -31,3 +31,23 @@
 #define CORECLR_FILE_NAME "libcoreclr.so"
 #endif
 #endif
+
+
+typedef int (*report_callback_ptr)(int progress);
+typedef char* (*doWork_ptr)(const char* jobName, int iterations, int dataSize, double* data, report_callback_ptr callbackFunction);
+
+
+template <typename T>
+struct ManagedDelegateResult {
+	bool success;
+	int failureCode;
+
+	T Delegate;
+};
+
+struct RuntimeEnvironment {
+    std::string runtimePath;
+    std::string coreClrPath;
+    std::string managedLibraryPath;
+    std::string tpaList;
+};

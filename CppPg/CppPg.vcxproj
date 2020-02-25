@@ -150,6 +150,7 @@
     <ClCompile Include="CoreClrDefinitions.cpp" />
     <ClCompile Include="CppPg.cpp" />
     <ClCompile Include="RuntimeUtils.cpp" />
+    <ClCompile Include="ManagedDelegateResult.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CoreClrDefinitions.h" />

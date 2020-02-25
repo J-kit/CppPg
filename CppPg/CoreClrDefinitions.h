@@ -1,23 +1,35 @@
 #pragma once
 #include "stdafx.h"
-#include <vector>
 #include "RuntimeUtils.h"
+
 
 
 class CoreClrDefinitions
 {
 public:
-	static coreclr_initialize_ptr initializeCoreClr;
-	static coreclr_create_delegate_ptr createManagedDelegate;
-	static coreclr_shutdown_ptr shutdownCoreClr;
+	coreclr_initialize_ptr initializeCoreClr;
+	coreclr_create_delegate_ptr createManagedDelegate;
+	coreclr_shutdown_ptr shutdownCoreClr;
+
+	RuntimeEnvironment environment;
+
+	template <typename T>
+	ManagedDelegateResult<T> CreateManagedDelegate();
+
+
 
 	CoreClrDefinitions();
-	int Init(RuntimeEnvironment env);
-
 	~CoreClrDefinitions();
 
+	bool Shutdown();
+	int Init(RuntimeEnvironment env);
+
 private:
-	bool initiated = false;
+	bool initialized = false;
+	
+	void* clrHostHandle;
+	unsigned int clrDomainId;
+
+	int InitHostingFunctions();
+	int InitCoreClr();
 };
-
-
